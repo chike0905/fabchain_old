@@ -29,7 +29,7 @@ class GethController extends Controller
             ];
         $res = \Common::PostJson($url,$data);
         if(array_key_exists("result",$res["res"]) == true){
-            return redirect()->route('/home');
+            return redirect()->action('HomeController@index');
         } else {
             return redirect()->back()->withErrors(['msg'=> $res["res"]["error"]["message"]]);;
         }

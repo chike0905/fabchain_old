@@ -12,7 +12,7 @@
         <?php $error = $errors->all()?>
         <p class="red">{{$error[0]}}</p>
         @endif
-        <p class="h3">Please unlock Etherum account:<?php $user = Auth::user();echo $user->ethadd;?></p>
+        <p class="h3">Please unlock Ethereum account:<?php $user = Auth::user();echo $user->ethadd;?></p>
         <form action="/geth/unlock" method="post">
         {!! csrf_field() !!}
             <table class="col">
@@ -20,7 +20,7 @@
                     <th class="col-2">Password</th><td class="col-10"><input type="password" class="block field col-12" name="pass"></td>
                 </tr>
             </table>
-            <button type="submit" class="btn btn-primary">Deoploy</button>
+            <button type="submit" class="btn btn-primary">Unlock</button>
         </form>
     </div>
     </div>
