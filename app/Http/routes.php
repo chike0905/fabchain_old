@@ -19,5 +19,8 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/geth', 'GethController@unlockaccount');
+Route::get('/geth/unlock', function () {
+    return view('unlock');
+});
+Route::post('/geth/unlock', 'GethController@unlock');
 Route::post('/geth', 'GethController@postDeploy');

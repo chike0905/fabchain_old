@@ -17,9 +17,9 @@ class GethController extends Controller
         $this->middleware('auth');
     }
     //unlock account
-    public function unlockaccount(request $request){
+    public function unlock(request $request){
         $url = "http://localhost:8545";
-        $user = Auth::user();
+        $user = \Auth::user();
         //deploy
         $data = [
             'id' => '2',
@@ -29,9 +29,9 @@ class GethController extends Controller
             ];
         $res = \Common::PostJson($url,$data);
         if(array_key_exists("result",$res["res"]) == true){
-            return redirect()->route('home');
+            return redirect()->route('/home');
         } else {
-            return redirect()->back()->withErrors(['msg'=> $res["res"]["error"]]);;
+            return redirect()->back()->withErrors(['msg'=> $res["res"]["error"]["message"]]);;
         }
     }
     //deploy contract
@@ -51,7 +51,7 @@ class GethController extends Controller
         $res = \Common::PostJson($url,$data);
         $nodeInfo = $res["res"];
         $error = $res["error"];
-        */
+
         return view('geth',compact("objname"));
     }
 }
