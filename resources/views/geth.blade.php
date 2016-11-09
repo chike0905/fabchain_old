@@ -18,7 +18,10 @@
           <th class="col-2">User Ethereum Address</th><td class="col-10">{{ $userethadd }}</td>
       </tr>
       <tr>
-          <th class="col-2">G-Code file Name</th><td class="col-10">{{ $filename }}</td>
+          <th class="col-2">G-Code File Name</th><td class="col-10">{{ $filename }}</td>
+      </tr>
+      <tr>
+          <th class="col-2">G-Code File Hash</th><td class="col-10">{{ $filehash }}</td>
       </tr>
     </table>
   </div>
