@@ -6,7 +6,21 @@
     <div class="h2 p2 bold white bg-black">
           Geth
     </div>
-    <p class="h3">{{ $objname }}</p>
+    <table class="table-light col border rounded">
+      <caption class="h3">Object Info</caption>
+      <tr>
+          <th class="col-2">Object Name</th><td class="col-10">{{ $objname }}</td>
+      </tr>
+      <tr>
+          <th class="col-2">User name</th><td class="col-10">{{ $username }}</td>
+      </tr>
+      <tr>
+          <th class="col-2">User Ethereum Address</th><td class="col-10">{{ $userethadd }}</td>
+      </tr>
+      <tr>
+          <th class="col-2">G-Code file Name</th><td class="col-10">{{ $filename }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 @endsection

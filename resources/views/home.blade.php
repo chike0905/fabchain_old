@@ -43,11 +43,18 @@
     </p>
     <div class="deploy center">
         <p class="h3">Deploy</p>
-        <form action="/geth" method="post">
+        @if($errors->has())
+        <?php $error = $errors->all()?>
+        <p class="red">{{$error[0]}}</p>
+        @endif
+        <form method="post" action="/geth" enctype="multipart/form-data">
         {!! csrf_field() !!}
             <table class="col">
                 <tr>
                     <th class="col-2">Object Name:</th><td class="col-10"><input type="text" class="block field col-12" name="objname"></td>
+                </tr>
+                <tr>
+                    <th class="col-2">G-Code File:</th><td class="col-10"><input type="file" class="block field col-12" name="gcode"></td>
                 </tr>
             </table>
             <button type="submit" class="btn btn-primary">Deoploy</button>
