@@ -24,6 +24,14 @@
           <th class="col-2">G-Code File Hash</th><td class="col-10">{{ $filehash }}</td>
       </tr>
     </table>
+    <div class="center">
+    <form action="/print" method="post">
+        <input type="hidden" name="objname" value="{{ $objname }}">
+        <input type="hidden" name="filename" value="{{ $filename }}">
+        <input type="hidden" name="filehash" value="{{ $filehash }}">
+        <input type="submit" class="btn btn-primary center" value="Print">
+    </form>
+    </div>
   </div>
 </div>
 @endsection

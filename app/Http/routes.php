@@ -19,8 +19,12 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+//geth
 Route::get('/geth/unlock', function () {
     return view('unlock');
 });
 Route::post('/geth/unlock', 'GethController@unlock');
 Route::post('/geth', 'GethController@postDeploy');
+
+//print
+Route::post('/print', 'PrintController@index');
