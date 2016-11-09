@@ -35,7 +35,6 @@ class GethController extends Controller
         }
     }
 
-    //deploy contract
     public function postDeploy(request $request){
         $url = "http://localhost:8545";
         $objname = $request->input('objname');
@@ -47,23 +46,10 @@ class GethController extends Controller
         $move = $file->move('./gcodes',$filename);
         $filehash = hash_file("sha256","./gcodes/".$filename);
         $user = \Auth::user();
-        $src = "";//compile済みコントラクトコード
-
-        //deploy
-        $data = [
-            'id' => '2',
-            'jsonrpc' => '2.0',
-            'method' => 'eth_sendTransaction',
-            'from' => $user->ethadd,
-            'data' => $src
-            ];
-        $res = \Common::PostJson($url,$data);
-        $result = $res["res"];
-        $error = $res["error"];
 
         $username = $user->name;
         $userethadd = $user->ethadd;
-
-        return view('geth',compact("objname","username","userethadd","filename","filehash"));
+        $gas = $request->input("gas");
+        return view('geth',compact("objname","username","userethadd","filename","filehash","gas"));
     }
 }

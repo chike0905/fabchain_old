@@ -23,12 +23,17 @@
       <tr>
           <th class="col-2">G-Code File Hash</th><td class="col-10">{{ $filehash }}</td>
       </tr>
+      <tr>
+          <th class="col-2">Gas</th><td class="col-10">{{ $gas }}</td>
+      </tr>
     </table>
     <div class="center">
     <form action="/print" method="post">
+        {!! csrf_field() !!}
         <input type="hidden" name="objname" value="{{ $objname }}">
         <input type="hidden" name="filename" value="{{ $filename }}">
         <input type="hidden" name="filehash" value="{{ $filehash }}">
+        <input type="hidden" name="gas" value="{{ $gas }}">
         <input type="submit" class="btn btn-primary center" value="Print">
     </form>
     </div>

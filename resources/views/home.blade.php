@@ -45,13 +45,16 @@
         <p class="h3">Deploy</p>
         @if($errors->has())
         <?php $error = $errors->all()?>
-        <p class="red">{{$error[0]}}</p>
+        <p class="red">{{ $error[0]}}</p>
         @endif
         <form method="post" action="/geth" enctype="multipart/form-data">
         {!! csrf_field() !!}
             <table class="col">
                 <tr>
                     <th class="col-2">Object Name:</th><td class="col-10"><input type="text" class="block field col-12" name="objname"></td>
+                </tr>
+                <tr>
+                    <th class="col-2">Gas:</th><td class="col-10"><input type="text" class="block field col-12" name="gas"></td>
                 </tr>
                 <tr>
                     <th class="col-2">G-Code File:</th><td class="col-10"><input type="file" class="block field col-12" name="gcode"></td>
