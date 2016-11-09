@@ -37,7 +37,5 @@ class PrintController extends Controller
         }
         $txadd = $res["res"]["result"];
         return view("print",compact("txadd"));
-        //Octoprintへデータを送信
-        $url = "http://localhost:5000";//Url of Octoprint
     }
 }
