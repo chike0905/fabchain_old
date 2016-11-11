@@ -24,7 +24,7 @@
             <a href="{{ url('/home') }}" class="btn black btn-primary white bg-black navbtn">Home</a>
           </div>
           <div class="flex-auto">
-            <a href="{{ url('/geth') }}" class="btn black navbtn">Geth</a>
+            <a href="{{ url('/info') }}" class="btn black navbtn">View Object Info</a>
           </div>
           @if (Auth::guest())
           <div class="flex-auto">

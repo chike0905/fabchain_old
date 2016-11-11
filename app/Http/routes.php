@@ -28,3 +28,9 @@ Route::post('/geth', 'GethController@postDeploy');
 
 //print
 Route::post('/print', 'PrintController@index');
+
+//View info
+Route::get('/info', function (){
+    return view("info");
+});
+Route::post('/info', 'InfoController@index');

@@ -18,7 +18,6 @@
         echo "API ERROR:".$error;
       }else{
         echo "Geth is connected.";
-      }
       ?>
       <div style="word-break:break-all;">
       <table class="table-light col border rounded">
@@ -40,6 +39,7 @@
         </tr>
       </table>
       </div>
+      <?php } ?>
     </p>
     <div class="deploy center">
         <p class="h3">Deploy</p>
