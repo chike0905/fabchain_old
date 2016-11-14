@@ -37,7 +37,15 @@ class InfoController extends Controller
         //Get info from contract
         $cntadd = $res["res"]["result"]["contractAddress"];
         //暫定ABI
-        $cntabi = "";
-        return view('infoview',compact("objname","username"));
+        $cntabi = '[{"constant":true,"inputs":[],"name":"getmaker","outputs":[{"name":"maker","type":"address"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"}],"name":"transfar","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"getgcodehash","outputs":[{"name":"gcodehash","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"getname","outputs":[{"name":"name","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"_name","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"_maker","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"_gcodehash","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"inputs":[{"name":"name","type":"string"},{"name":"gcodehash","type":"string"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"}],"name":"Transfar","type":"event"}]';
+        //Get contract info
+        $data = [
+            "jsonrpc" => "2.0",
+            "method" => "eth_call",
+            "params" => [$txadd],
+            "id" => 3
+            ];
+        //$res = \Common::PostJson($url,$data);
+        return view('infoview',compact("txadd","cntadd"));
     }
 }
