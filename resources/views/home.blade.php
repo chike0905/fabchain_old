@@ -42,7 +42,7 @@
       <?php } ?>
     </p>
     <div class="deploy center">
-        <p class="h3">Deploy</p>
+        <p class="h3">Print</p>
         @if($errors->has())
         <?php $error = $errors->all()?>
         <p class="red">{{ $error[0]}}</p>
@@ -60,7 +60,7 @@
                     <th class="col-2">G-Code File:</th><td class="col-10"><input type="file" class="block field col-12" name="gcode"></td>
                 </tr>
             </table>
-            <button type="submit" class="btn btn-primary">Deoploy</button>
+            <button type="submit" class="btn btn-primary">Print</button>
         </form>
     </div>
     </div>

@@ -31,7 +31,6 @@
     <form action="/print" method="post">
         {!! csrf_field() !!}
         <input type="hidden" name="objname" value="{{ $objname }}">
-        <input type="hidden" name="filename" value="{{ $filename }}">
         <input type="hidden" name="filehash" value="{{ $filehash }}">
         <input type="hidden" name="gas" value="{{ $gas }}">
         <input type="submit" class="btn btn-primary center" value="Print">
