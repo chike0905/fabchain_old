@@ -34,3 +34,8 @@ Route::get('/info', function (){
     return view("info");
 });
 Route::post('/info', 'InfoController@index');
+
+Route::group(['prefix' => 'api'], function () {
+        Route::resource('info', 'ApiController@index');
+});
+
