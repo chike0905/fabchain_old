@@ -8,7 +8,25 @@
     </div>
     <div class="px1 py1">
     <div class="deploy center">
-        <p class="h3">Address of object info contract by the transaction({{ $txadd }}) is {{ $cntadd }}. </p>
+      <table class="table-light col border rounded">
+        <caption class="h3">Object info</caption>
+        <tr>
+            <th class="col-2">Object TX</th><td class="col-10">{{ $txadd }}</td>
+        </tr>
+        <tr>
+            <th class="col-2">Object CA</th><td class="col-10">{{ $cntadd }}</td>
+        </tr>
+        <tr>
+            <th class="col-2">Object name</th><td class="col-10">{{ $name }}</td>
+        </tr>
+        <tr>
+            <th class="col-2">Object maker</th><td class="col-10">{{ $maker }}</td>
+        </tr>
+        <tr>
+            <th class="col-2">Object 3D model hash</th><td class="col-10">{{ $hash }}</td>
+        </tr>
+      </table>
+      </div>
     </div>
     </div>
   </div>
